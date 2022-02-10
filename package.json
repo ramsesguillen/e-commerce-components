@@ -7,7 +7,7 @@
   "private": false,
   "homepage": "https://github.com/ramsesguillen",
   "repository": {
-    "url": "https://github.com/ramsesguillen/sb-components",
+    "url": "https://github.com/ramsesguillen/e-commerce-components",
     "type": "git"
   },
   "release": {
@@ -83,6 +83,15 @@
     "@storybook/react": "^6.4.18",
     "copyfiles": "^2.4.1",
     "rimraf": "^3.0.2",
+    "semantic-release": "^19.0.2",
     "webpack": "^5.68.0"
-  }
+  },
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/github",
+    "@semantic-release/npm",
+    "@semantic-release/git"
+  ]
 }
