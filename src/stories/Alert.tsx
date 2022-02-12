@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { elementType } from 'prop-types-extra';
+// import { elementType } from 'prop-types-extra';
 import { useUncontrolled } from 'uncontrollable';
 import useEventCallback from '@restart/hooks/useEventCallback';
 import Anchor from '@restart/ui/Anchor';
@@ -83,7 +83,7 @@ const propTypes = {
    * `false` to disable. A custom `react-transition-group` Transition can also
    * be provided.
    */
-  transition: PropTypes.oneOfType([PropTypes.bool, elementType]),
+  transition: PropTypes.oneOfType([PropTypes.bool]),
 };
 
 const defaultProps = {

@@ -6,7 +6,7 @@ import BaseOverlay, {
   OverlayProps as BaseOverlayProps,
   OverlayArrowProps,
 } from '@restart/ui/Overlay';
-import { componentOrElement, elementType } from 'prop-types-extra';
+import { componentOrElement, elementType } from 'prop-types-extra'; // TODO
 import useMergedRefs from '@restart/hooks/useMergedRefs';
 import useOverlayOffset from './useOverlayOffset';
 import Fade from './Fade';

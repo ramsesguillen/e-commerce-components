@@ -113,7 +113,7 @@ const OffcanvasToggling = React.forwardRef<
             children.props.className,
             (status === ENTERING || status === EXITING) &&
               `${bsPrefix}-toggling`,
-            transitionStyles[status],
+            transitionStyles[status], //TODO
           ),
         })
       }

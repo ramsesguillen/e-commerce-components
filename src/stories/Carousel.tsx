@@ -195,7 +195,7 @@ const defaultProps = {
   nextLabel: 'Next',
 };
 
-function isVisible(element) {
+function isVisible(element: any) {
   if (
     !element ||
     !element.style ||
@@ -528,7 +528,7 @@ const Carousel: BsPrefixRefForwardingComponent<'div', CarouselProps> =
     const indicatorOnClicks = useMemo(
       () =>
         indicators &&
-        Array.from({ length: numChildren }, (_, index) => (event) => {
+        Array.from({ length: numChildren }, (_, index) => (event: any) => {
           onSelect?.(index, event);
         }),
       [indicators, numChildren, onSelect],

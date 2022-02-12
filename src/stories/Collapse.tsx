@@ -41,7 +41,7 @@ function getDefaultDimensionValue(
   elem: HTMLElement,
 ): number {
   const offset = `offset${dimension[0].toUpperCase()}${dimension.slice(1)}`;
-  const value = elem[offset];
+  const value = elem[offset]; // TODO
   const margins = MARGINS[dimension];
 
   return (
@@ -177,7 +177,7 @@ const Collapse = React.forwardRef<Transition<any>, CollapseProps>(
     /* -- Expanding -- */
     const handleEnter = useMemo(
       () =>
-        createChainedFunction((elem) => {
+        createChainedFunction((elem: any) => {
           elem.style[computedDimension] = '0';
         }, onEnter),
       [computedDimension, onEnter],
@@ -185,7 +185,7 @@ const Collapse = React.forwardRef<Transition<any>, CollapseProps>(
 
     const handleEntering = useMemo(
       () =>
-        createChainedFunction((elem) => {
+        createChainedFunction((elem: any) => {
           const scroll = `scroll${computedDimension[0].toUpperCase()}${computedDimension.slice(
             1,
           )}`;
@@ -196,7 +196,7 @@ const Collapse = React.forwardRef<Transition<any>, CollapseProps>(
 
     const handleEntered = useMemo(
       () =>
-        createChainedFunction((elem) => {
+        createChainedFunction((elem: any) => {
           elem.style[computedDimension] = null;
         }, onEntered),
       [computedDimension, onEntered],
@@ -205,7 +205,7 @@ const Collapse = React.forwardRef<Transition<any>, CollapseProps>(
     /* -- Collapsing -- */
     const handleExit = useMemo(
       () =>
-        createChainedFunction((elem) => {
+        createChainedFunction((elem: any) => {
           elem.style[computedDimension] = `${getDimensionValue(
             computedDimension,
             elem,
@@ -216,7 +216,7 @@ const Collapse = React.forwardRef<Transition<any>, CollapseProps>(
     );
     const handleExiting = useMemo(
       () =>
-        createChainedFunction((elem) => {
+        createChainedFunction((elem: any) => {
           elem.style[computedDimension] = null;
         }, onExiting),
       [computedDimension, onExiting],
@@ -241,7 +241,7 @@ const Collapse = React.forwardRef<Transition<any>, CollapseProps>(
             className: classNames(
               className,
               children.props.className,
-              collapseStyles[state],
+              collapseStyles[state], // TODO
               computedDimension === 'width' && 'collapse-horizontal',
             ),
           })

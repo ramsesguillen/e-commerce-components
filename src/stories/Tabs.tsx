@@ -90,8 +90,8 @@ const defaultProps = {
   unmountOnExit: false,
 };
 
-function getDefaultActiveKey(children) {
-  let defaultActiveKey;
+function getDefaultActiveKey(children: any) {
+  let defaultActiveKey: any;
   forEach(children, (child) => {
     if (defaultActiveKey == null) {
       defaultActiveKey = child.props.eventKey;
@@ -101,7 +101,7 @@ function getDefaultActiveKey(children) {
   return defaultActiveKey;
 }
 
-function renderTab(child) {
+function renderTab(child: any) {
   const { title, eventKey, disabled, tabClassName, id } = child.props;
   if (title == null) {
     return null;

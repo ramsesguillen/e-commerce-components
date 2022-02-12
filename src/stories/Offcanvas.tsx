@@ -174,11 +174,11 @@ const defaultProps: Partial<OffcanvasProps> = {
   placement: 'start',
 };
 
-function DialogTransition(props) {
+function DialogTransition(props: any) {
   return <OffcanvasToggling {...props} />;
 }
 
-function BackdropTransition(props) {
+function BackdropTransition(props: any) {
   return <Fade {...props} />;
 }
 
@@ -249,12 +249,12 @@ const Offcanvas: BsPrefixRefForwardingComponent<'div', OffcanvasProps> =
         return getSharedManager();
       }
 
-      const handleEnter = (node, ...args) => {
+      const handleEnter = (node: any, ...args: any) => {
         if (node) node.style.visibility = 'visible';
         onEnter?.(node, ...args);
       };
 
-      const handleExited = (node, ...args) => {
+      const handleExited = (node: any, ...args: any) => {
         if (node) node.style.visibility = '';
         onExited?.(...args);
       };
@@ -269,7 +269,7 @@ const Offcanvas: BsPrefixRefForwardingComponent<'div', OffcanvasProps> =
         [backdropClassName, bsPrefix],
       );
 
-      const renderDialog = (dialogProps) => (
+      const renderDialog = (dialogProps: any) => (
         <div
           role="dialog"
           {...dialogProps}

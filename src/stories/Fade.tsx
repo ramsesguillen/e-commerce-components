@@ -127,7 +127,7 @@ const Fade = React.forwardRef<Transition<any>, FadeProps>(
               'fade',
               className,
               children.props.className,
-              fadeStyles[status],
+              fadeStyles[status], // TODO
               transitionClasses[status],
             ),
           })

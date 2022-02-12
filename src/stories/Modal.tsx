@@ -231,11 +231,11 @@ const defaultProps = {
 };
 
 /* eslint-disable no-use-before-define, react/no-multi-comp */
-function DialogTransition(props) {
+function DialogTransition(props: any) {
   return <Fade {...props} timeout={null} />;
 }
 
-function BackdropTransition(props) {
+function BackdropTransition(props: any) {
   return <Fade {...props} timeout={null} />;
 }
 
@@ -285,7 +285,7 @@ const Modal: BsPrefixRefForwardingComponent<'div', ModalProps> =
       const ignoreBackdropClickRef = useRef(false);
       const removeStaticModalAnimationRef = useRef<(() => void) | null>(null);
       const [modal, setModalRef] = useCallbackRef<ModalInstance>();
-      const mergedRef = useMergedRefs(ref, setModalRef);
+      const mergedRef = useMergedRefs(ref, setModalRef); // TODO
       const handleHide = useEventCallback(onHide);
       const isRTL = useIsRTL();
 
@@ -303,7 +303,7 @@ const Modal: BsPrefixRefForwardingComponent<'div', ModalProps> =
         return getSharedManager({ isRTL });
       }
 
-      function updateDialogStyle(node) {
+      function updateDialogStyle(node: any) {
         if (!canUseDOM) return;
 
         const containerIsOverflowing =
@@ -342,7 +342,7 @@ const Modal: BsPrefixRefForwardingComponent<'div', ModalProps> =
         waitingForMouseUpRef.current = true;
       };
 
-      const handleMouseUp = (e) => {
+      const handleMouseUp = (e: any) => {
         if (
           waitingForMouseUpRef.current &&
           modal &&
@@ -363,7 +363,7 @@ const Modal: BsPrefixRefForwardingComponent<'div', ModalProps> =
         );
       };
 
-      const handleStaticBackdropClick = (e) => {
+      const handleStaticBackdropClick = (e: any) => {
         if (e.target !== e.currentTarget) {
           return;
         }
@@ -371,7 +371,7 @@ const Modal: BsPrefixRefForwardingComponent<'div', ModalProps> =
         handleStaticModalAnimation();
       };
 
-      const handleClick = (e) => {
+      const handleClick = (e: any) => {
         if (backdrop === 'static') {
           handleStaticBackdropClick(e);
           return;
@@ -385,7 +385,7 @@ const Modal: BsPrefixRefForwardingComponent<'div', ModalProps> =
         onHide?.();
       };
 
-      const handleEscapeKeyDown = (e) => {
+      const handleEscapeKeyDown = (e: any) => {
         if (!keyboard && backdrop === 'static') {
           // Call preventDefault to stop modal from closing in restart ui,
           // then play our animation.
@@ -396,7 +396,7 @@ const Modal: BsPrefixRefForwardingComponent<'div', ModalProps> =
         }
       };
 
-      const handleEnter = (node, isAppearing) => {
+      const handleEnter = (node: any, isAppearing: any) => {
         if (node) {
           node.style.display = 'block';
           updateDialogStyle(node);
@@ -405,19 +405,19 @@ const Modal: BsPrefixRefForwardingComponent<'div', ModalProps> =
         onEnter?.(node, isAppearing);
       };
 
-      const handleExit = (node) => {
+      const handleExit = (node: any) => {
         removeStaticModalAnimationRef.current?.();
         onExit?.(node);
       };
 
-      const handleEntering = (node, isAppearing) => {
+      const handleEntering = (node: any, isAppearing: any) => {
         onEntering?.(node, isAppearing);
 
         // FIXME: This should work even when animation is disabled.
         addEventListener(window as any, 'resize', handleWindowResize);
       };
 
-      const handleExited = (node) => {
+      const handleExited = (node: any) => {
         if (node) node.style.display = ''; // RHL removes it sometimes
         onExited?.(node);
 
@@ -446,7 +446,7 @@ const Modal: BsPrefixRefForwardingComponent<'div', ModalProps> =
         baseModalStyle.display = 'block';
       }
 
-      const renderDialog = (dialogProps) => (
+      const renderDialog = (dialogProps: any) => (
         <div
           role="dialog"
           {...dialogProps}

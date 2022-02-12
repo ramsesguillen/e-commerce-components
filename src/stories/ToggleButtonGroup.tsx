@@ -124,7 +124,7 @@ const ToggleButtonGroup: BsPrefixRefForwardingComponent<
       {map(children, (child) => {
         const values = getValues();
         const { value: childVal, onChange: childOnChange } = child.props;
-        const handler = (e) => handleToggle(childVal, e);
+        const handler = (e: any) => handleToggle(childVal, e); //TODO
 
         return React.cloneElement(child, {
           type,
