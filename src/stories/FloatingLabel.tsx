@@ -32,7 +32,7 @@ const FloatingLabel: BsPrefixRefForwardingComponent<'div', FloatingLabelProps> =
 
       return (
         <FormGroup
-          ref={ref}
+          _ref={ref}
           className={classNames(className, bsPrefix)}
           controlId={controlId}
           {...props}

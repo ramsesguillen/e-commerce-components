@@ -44,7 +44,7 @@ export function useIsRTL() {
   return dir === 'rtl';
 }
 
-function createBootstrapComponent(Component, opts) {
+function createBootstrapComponent(Component: any, opts: any) { //TODO
   if (typeof opts === 'string') opts = { prefix: opts };
   const isClassy = Component.prototype && Component.prototype.isReactComponent;
   // If it's a functional component make sure we don't break it with a ref
@@ -52,7 +52,7 @@ function createBootstrapComponent(Component, opts) {
 
   const Wrapped = React.forwardRef<any, { bsPrefix?: string }>(
     ({ ...props }, ref) => {
-      props[forwardRefAs] = ref;
+      props[forwardRefAs] = ref; //TODO
       const bsPrefix = useBootstrapPrefix((props as any).bsPrefix, prefix);
       return <Component {...props} bsPrefix={bsPrefix} />;
     },

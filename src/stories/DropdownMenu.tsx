@@ -157,7 +157,7 @@ const DropdownMenu: BsPrefixRefForwardingComponent<'div', DropdownMenuProps> =
 
           if (keys.length) {
             const brkPoint = keys[0];
-            const direction: AlignDirection = align[brkPoint];
+            const direction: AlignDirection = align[brkPoint]; // TODO
 
             // .dropdown-menu-end is required for responsively aligning
             // left in addition to align left classes.
@@ -206,7 +206,7 @@ const DropdownMenu: BsPrefixRefForwardingComponent<'div', DropdownMenuProps> =
         // we don't need the default popper style,
         // menus are display: none when not shown.
         style = { ...props.style, ...menuProps.style };
-        props['x-placement'] = popper.placement;
+        props['x-placement'] = popper.placement; // TODO
       }
 
       return (

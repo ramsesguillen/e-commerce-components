@@ -14,13 +14,13 @@ const InputGroupText = createWithBsPrefix('input-group-text', {
   Component: 'span',
 });
 
-const InputGroupCheckbox = (props) => (
+const InputGroupCheckbox = (props: any) => (
   <InputGroupText>
     <FormCheckInput type="checkbox" {...props} />
   </InputGroupText>
 );
 
-const InputGroupRadio = (props) => (
+const InputGroupRadio = (props: any) => (
   <InputGroupText>
     <FormCheckInput type="radio" {...props} />
   </InputGroupText>

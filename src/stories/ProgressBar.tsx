@@ -27,7 +27,7 @@ const ROUND_PRECISION = 1000;
 /**
  * Validate that children, if any, are instances of `<ProgressBar>`.
  */
-function onlyProgressBar(props, propName, componentName): Error | null {
+function onlyProgressBar(props: any, propName: any, componentName: any): Error | null {
   const children = props[propName];
   if (!children) {
     return null;
@@ -133,7 +133,7 @@ const defaultProps = {
   striped: false,
 };
 
-function getPercentage(now, min, max) {
+function getPercentage(now: any, min: any, max: any) {
   const percentage = ((now - min) / (max - min)) * 100;
   return Math.round(percentage * ROUND_PRECISION) / ROUND_PRECISION;
 }
@@ -153,7 +153,7 @@ function renderProgressBar(
     bsPrefix,
     ...props
   }: ProgressBarProps,
-  ref,
+  ref: any,
 ) {
   return (
     <div
