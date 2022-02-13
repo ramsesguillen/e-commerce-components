@@ -64,7 +64,9 @@
     "build-storybook": "build-storybook",
     "clean": "rimraf list/",
     "copy-files": "copyfiles -u 1 src/**/*.css list/dist/",
-    "build-types": "yarn tsc -d --emitDeclarationOnly --outDir types"
+    "build-types": "yarn tsc -d --emitDeclarationOnly --outDir types",
+    "format": "eslint --ext tsx --ext ts src/components --fix",
+    "lint": "eslint --ext tsx --ext ts src/components && tsc --noEmit"
   },
   "lint-staged": {
     "*.{js,ts,tsx}": "eslint --fix"
