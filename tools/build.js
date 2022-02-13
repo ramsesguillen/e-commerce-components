@@ -10,7 +10,7 @@ const getConfig = require('./dist.webpack.config');
 
 const targets = process.argv.slice(2);
 
-const srcRoot = path.join(__dirname, '../src');
+const srcRoot = path.join(__dirname, '../src/components');
 const typesRoot = path.join(__dirname, '../types');
 
 const libRoot = path.join(__dirname, '../lib');
