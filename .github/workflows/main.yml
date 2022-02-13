@@ -35,11 +35,10 @@ jobs:
       - name: Build App
         run: yarn build
 
-      - name: Rename App
-        run: yarn copy  
-
       - name: E-Commerce
+        run: npx semantic-release
+        id: semantic
         env:
           GITHUB_TOKEN: ${{ secrets.E_COMMERCE_GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.E_COMMERCE_NPM_TOKEN }}
-        run: npx semantic-release
+        
