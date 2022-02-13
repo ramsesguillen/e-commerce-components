@@ -7,5 +7,5 @@ Este paquete esta diseñado con React Componentes + Storybook + NPM Publish.
 
 #### https://www.npmjs.com/package/semantic-release
 
-npm i e-commerce-cmts
+yarn i e-commerce-cmts
 
