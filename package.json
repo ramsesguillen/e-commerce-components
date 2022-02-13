@@ -2,10 +2,10 @@
   "name": "e-commerce-cmts",
   "version": "0.1.0",
   "license": "MIT",
-  "typings": "dist/esm/index.d.ts",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/esm/index.d.ts",
+  "typings": "lib/index.d.ts",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "types": "lib/esm/index.d.ts",
   "sideEffects": false,
   "private": false,
   "homepage": "https://github.com/ramsesguillen",
@@ -67,8 +67,8 @@
     "build-types": "yarn tsc -d --emitDeclarationOnly --outDir types",
     "format": "eslint --ext tsx --ext ts src/components --fix",
     "lint": "eslint --ext tsx --ext ts src/components && tsc --noEmit",
-    "rename": "node -e \"require('fs').rename('lib', 'dist', function(err) { if (err) console.log(err); console.log('File successfully renamed!') })\""
-  
+    "rename": "node -e \"require('fs').rename('lib', 'dist', function(err) { if (err) console.log(err); console.log('File successfully renamed!') })\"",
+    "copy": "copyfiles -u 1 lib/**/* ./"
   },
   "lint-staged": {
     "*.{js,ts,tsx}": "eslint --fix"
@@ -151,5 +151,8 @@
     "@semantic-release/github",
     "@semantic-release/npm",
     "@semantic-release/git"
-  ]
+  ],
+  "publishConfig": {
+    "directory": "lib"
+  }
 }

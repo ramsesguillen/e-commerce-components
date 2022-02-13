@@ -36,7 +36,7 @@ jobs:
         run: yarn build
 
       - name: Rename App
-        run: yarn rename  
+        run: yarn copy  
 
       - name: E-Commerce
         env:
