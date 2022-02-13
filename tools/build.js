@@ -82,7 +82,7 @@ const buildDist = step(
 
 const buildDirectories = step('Linking directories', () =>
   cherryPick({
-    inputDir: '../src',
+    inputDir: '../src/components',
     cjsDir: 'cjs',
     esmDir: 'esm',
     cwd: libRoot,
