@@ -131,7 +131,6 @@
     "semantic-release": "^19.0.2",
     "style-loader": "^3.3.1",
     "webpack": "^5.68.0",
-
     "eslint": "^7.32.0",
     "eslint-config-4catalyzer-typescript": "^3.2.0",
     "eslint-import-resolver-node": "^0.3.6",
@@ -142,6 +141,19 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0"
   },
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/git",
+    "@semantic-release/github",
+    [
+      "@semantic-release/npm",
+      {
+        "pkgRoot": "lib"
+      }
+    ]
+  ],
   "publishConfig": {
     "directory": "lib",
     "pkgRoot": "lib"
