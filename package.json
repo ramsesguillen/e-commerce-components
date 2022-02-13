@@ -69,7 +69,8 @@
     "lint": "eslint --ext tsx --ext ts src/components && tsc --noEmit",
     "rename": "node -e \"require('fs').rename('lib', 'dist', function(err) { if (err) console.log(err); console.log('File successfully renamed!') })\"",
     "copy": "copyfiles -u 1 lib/**/* ./",
-    "postbuild": "cp package.json dist"
+    "postbuild": "cp package.json dist",
+    "prepublishOnly": "npm run build && cp -r ./lib/* . && rm -rf ./lib"
   },
   "lint-staged": {
     "*.{js,ts,tsx}": "eslint --fix"
