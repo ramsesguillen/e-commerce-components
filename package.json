@@ -151,8 +151,5 @@
     "@semantic-release/github",
     "@semantic-release/npm",
     "@semantic-release/git"
-  ],
-  "publishConfig": {
-    "directory": "lib"
-  }
+  ]
 }
