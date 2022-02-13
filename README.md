@@ -1,6 +1,7 @@
-# Getting Started with ECommerceComponents App
+# e-commerce-cmts
 
+Este paquete esta diseñado con React Componentes + Storybook + NPM Publish
 
-
-### `npm start`
-
+```
+yarn add e-commerce-cmts
+```
