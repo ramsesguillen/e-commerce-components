@@ -13,10 +13,18 @@ const targets = process.argv.slice(2);
 const srcRoot = path.join(__dirname, '../src/components');
 const typesRoot = path.join(__dirname, '../types/components');
 
+/* console.log("srcRoot", srcRoot)
+console.log("typesRoot", typesRoot) */
+
 const libRoot = path.join(__dirname, '../lib');
 const distRoot = path.join(libRoot, 'dist');
 const cjsRoot = path.join(libRoot, 'cjs');
 const esRoot = path.join(libRoot, 'esm');
+
+/* console.log("libRoot", libRoot)
+console.log("distRoot", distRoot)
+console.log("cjsRoot", cjsRoot)
+console.log("esRoot", esRoot) */
 
 const clean = () => fse.existsSync(libRoot) && fse.removeSync(libRoot);
 
