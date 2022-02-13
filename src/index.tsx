@@ -1,3 +1,1 @@
-import Button from "./stories/Button";
-
-export { Button };
+export * from './components/index';
