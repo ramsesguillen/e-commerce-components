@@ -66,7 +66,9 @@
     "copy-files": "copyfiles -u 1 src/**/*.css list/dist/",
     "build-types": "yarn tsc -d --emitDeclarationOnly --outDir types",
     "format": "eslint --ext tsx --ext ts src/components --fix",
-    "lint": "eslint --ext tsx --ext ts src/components && tsc --noEmit"
+    "lint": "eslint --ext tsx --ext ts src/components && tsc --noEmit",
+    "rename": "node -e \"require('fs').rename('lib', 'dist', function(err) { if (err) console.log(err); console.log('File successfully renamed!') })\""
+  
   },
   "lint-staged": {
     "*.{js,ts,tsx}": "eslint --fix"
