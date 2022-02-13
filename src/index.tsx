@@ -1,1 +1,3 @@
-export { default } from './stories/Button';
+import Button from "./stories/Button";
+
+export { Button };
