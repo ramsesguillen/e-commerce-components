@@ -37,6 +37,7 @@
     "@types/react-dom": "^17.0.11",
     "@types/react-transition-group": "^4.4.1",
     "@types/warning": "^3.0.0",
+    "cherry-pick": "^0.5.0",
     "classnames": "^2.3.1",
     "dom-helpers": "^5.2.1",
     "invariant": "^2.2.4",
@@ -54,10 +55,15 @@
   "scripts": {
     "start": "start-storybook -p 6006",
     "build": "yarn clean && tsc && yarn copy-files",
+    "build2": "node tools/build.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "clean": "rimraf dist/",
-    "copy-files": "copyfiles -u 1 src/**/*.css dist/"
+    "clean": "rimraf list/",
+    "copy-files": "copyfiles -u 1 src/**/*.css list/dist/",
+    "build-types": "yarn tsc -d --emitDeclarationOnly --outDir types"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": "eslint --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -88,8 +94,15 @@
     ]
   },
   "devDependencies": {
+    "cpy-cli": "^3.1.1",
     "@4c/rollout": "^3.0.1",
     "@4c/tsconfig": "^0.4.0",
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-flow": "^7.16.7",
+    "@babel/preset-typescript": "^7.10.4",
+    "@babel/register": "^7.10.5",
+    "@react-bootstrap/babel-preset": "^2.1.0",
     "@storybook/addon-actions": "^6.4.18",
     "@storybook/addon-essentials": "^6.4.18",
     "@storybook/addon-links": "^6.4.18",
@@ -99,6 +112,9 @@
     "@storybook/preset-create-react-app": "^4.0.1",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.4.18",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-istanbul": "^6.0.0",
     "copyfiles": "^2.4.1",
     "css-loader": "^6.6.0",
     "rimraf": "^3.0.2",
@@ -115,5 +131,8 @@
     "@semantic-release/github",
     "@semantic-release/npm",
     "@semantic-release/git"
-  ]
+  ],
+  "publishConfig": {
+    "directory": "lib"
+  }
 }

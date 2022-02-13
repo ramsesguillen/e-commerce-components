@@ -1,1 +1,2 @@
-export * from './components/index';
+export * as default from './components/index';
+
