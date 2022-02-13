@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "license": "MIT",
   "typings": "dist/index.d.ts",
-  "main": "dist/index.js",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "types": "lib/esm/index.d.ts",
+
   "private": false,
   "homepage": "https://github.com/ramsesguillen",
   "repository": {
@@ -54,8 +57,8 @@
   },
   "scripts": {
     "start": "start-storybook -p 6006",
-    "build": "yarn clean && tsc && yarn copy-files",
-    "build2": "node tools/build.js",
+    "build-old": "yarn clean && tsc && yarn copy-files",
+    "build": "node tools/build.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "clean": "rimraf list/",
