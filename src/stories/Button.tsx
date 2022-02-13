@@ -20,6 +20,7 @@ export interface ButtonProps
 export type CommonButtonProps = 'href' | 'size' | 'variant' | 'disabled';
 
 const propTypes = {
+  
   /**
    * @default 'btn'
    */
@@ -73,7 +74,7 @@ const defaultProps = {
   disabled: false,
 };
 
-const Button: BsPrefixRefForwardingComponent<'button', ButtonProps> =
+export const Button: BsPrefixRefForwardingComponent<'button', ButtonProps> =
   React.forwardRef<HTMLButtonElement, ButtonProps>(
     ({ as, bsPrefix, variant, size, active, className, ...props }, ref) => {
       const prefix = useBootstrapPrefix(bsPrefix, 'btn');
@@ -105,5 +106,5 @@ const Button: BsPrefixRefForwardingComponent<'button', ButtonProps> =
 Button.displayName = 'Button';
 Button.propTypes = propTypes;
 Button.defaultProps = defaultProps;
-
 export default Button;
+
