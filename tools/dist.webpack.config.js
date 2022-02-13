@@ -3,7 +3,7 @@ module.exports = (distRoot, optimize) => ({
   optimization: {
     minimize: !!optimize,
   },
-  entry: './src/index.tsx',
+  entry: './src/components/index.tsx',
   output: {
     path: distRoot,
     filename: optimize ? 'e-commerce-cmts.min.js' : 'e-commerce-cmts.js',

@@ -6,7 +6,7 @@
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "types": "lib/esm/index.d.ts",
-
+  "sideEffects": false,
   "private": false,
   "homepage": "https://github.com/ramsesguillen",
   "repository": {
@@ -19,8 +19,9 @@
     ]
   },
   "files": [
+    "lib",
     "dist",
-    "src"
+    "es"
   ],
   "peerDependencies": {
     "react": ">=16"
