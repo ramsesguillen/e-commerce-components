@@ -1,6 +1,6 @@
 # e-commerce-cmts
 
-Este paquete esta diseñado con React Componentes + Storybook + NPM Publish
+Este paquete esta diseñado con React Componentes + Storybook + NPM Publish.
 
 
 ### `npm start`
