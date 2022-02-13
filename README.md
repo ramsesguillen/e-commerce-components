@@ -2,6 +2,10 @@
 
 Este paquete esta diseñado con React Componentes + Storybook + NPM Publish
 
-```
-yarn add e-commerce-cmts
-```
+
+### `npm start`
+
+#### https://www.npmjs.com/package/semantic-release
+
+npm i e-commerce-cmts
+
