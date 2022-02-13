@@ -35,6 +35,11 @@ jobs:
       - name: Build App
         run: yarn build
 
+      - name: Post Build
+        run: yarn postbuild
+
+
+
       - name: E-Commerce
         run: npx semantic-release
         id: semantic
