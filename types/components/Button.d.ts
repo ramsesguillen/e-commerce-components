@@ -5,6 +5,9 @@ export interface ButtonProps extends BaseButtonProps, Omit<BsPrefixProps, 'as'> 
     active?: boolean;
     variant?: ButtonVariant;
     size?: 'sm' | 'lg';
+    icon?: string | object;
+    loading?: boolean;
+    label?: string;
 }
 export declare type CommonButtonProps = 'href' | 'size' | 'variant' | 'disabled';
 export declare const Button: BsPrefixRefForwardingComponent<'button', ButtonProps>;

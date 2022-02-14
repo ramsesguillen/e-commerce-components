@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     useButtonProps,
     ButtonProps as BaseButtonProps,
@@ -15,7 +16,7 @@ export interface ButtonProps
     active?: boolean;
     variant?: ButtonVariant;
     size?: 'sm' | 'lg';
-    icon?: string;
+    icon?: string | object;
     loading?: boolean;
     label?: string;
 }
@@ -56,7 +57,10 @@ const propTypes = {
      * Specifies class icon.
      *
      */
-    icon: PropTypes.string,
+    icon: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.object
+      ]),
 
     /** Manually set the visual state of the button to `:active` */
     active: PropTypes.bool,
@@ -120,6 +124,12 @@ export const Button: BsPrefixRefForwardingComponent<'button', ButtonProps> =
                 icon = 'fal fa-asterisk fa-spin';
             }
             
+            const getIcon = (valueIcon: any) => {
+                if( typeof valueIcon === 'string'){
+                    return (<i className={valueIcon}></i>);
+                }
+                return (<FontAwesomeIcon icon={valueIcon} />);
+            }
 
             return (
                 <Component
@@ -136,7 +146,7 @@ export const Button: BsPrefixRefForwardingComponent<'button', ButtonProps> =
                         loading && 'disabled'
                     )}
                 >
-                    {icon && <i className={icon}></i>} { label ? label : children }
+                    {icon && getIcon(icon) } { label ? label : children }
                 </Component>
             );
         }

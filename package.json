@@ -28,6 +28,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.14.0",
+    "@fortawesome/fontawesome-svg-core": "^1.3.0",
+    "@fortawesome/react-fontawesome": "^0.1.17",
     "@restart/hooks": "^0.4.5",
     "@restart/ui": "^1.0.1",
     "@testing-library/jest-dom": "^5.16.2",
@@ -97,7 +99,6 @@
     ]
   },
   "devDependencies": {
-    "cpy-cli": "^3.1.1",
     "@4c/rollout": "^3.0.1",
     "@4c/tsconfig": "^0.4.0",
     "@babel/cli": "^7.10.5",
@@ -121,13 +122,8 @@
     "babel-loader": "^8.1.0",
     "babel-plugin-istanbul": "^6.0.0",
     "copyfiles": "^2.4.1",
+    "cpy-cli": "^3.1.1",
     "css-loader": "^6.6.0",
-    "rimraf": "^3.0.2",
-    "sass": "^1.49.7",
-    "sass-loader": "^12.4.0",
-    "semantic-release": "^19.0.2",
-    "style-loader": "^3.3.1",
-    "webpack": "^5.68.0",
     "eslint": "^7.32.0",
     "eslint-config-4catalyzer-typescript": "^3.2.0",
     "eslint-import-resolver-node": "^0.3.6",
@@ -136,7 +132,13 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-mocha": "^9.0.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.28.0"
+    "eslint-plugin-react": "^7.28.0",
+    "rimraf": "^3.0.2",
+    "sass": "^1.49.7",
+    "sass-loader": "^12.4.0",
+    "semantic-release": "^19.0.2",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.68.0"
   },
   "plugins": [
     "@semantic-release/commit-analyzer",
