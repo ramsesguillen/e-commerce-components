@@ -56,6 +56,8 @@ const propTypes = {
     /** Manually set the visual state of the button to `:active` */
     active: PropTypes.bool,
 
+    /** Manually set the visual state of the button to `:loading` */
+    loading: PropTypes.bool,
     /**
      * Disables the Button, preventing mouse events,
      * even if the underlying component is an `<a>` element
@@ -79,6 +81,7 @@ const defaultProps = {
     variant: 'primary',
     active: false,
     disabled: false,
+    loading: false
 };
 
 export const Button: BsPrefixRefForwardingComponent<'button', ButtonProps> =
