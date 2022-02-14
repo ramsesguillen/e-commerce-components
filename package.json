@@ -67,7 +67,7 @@
     "build-types": "yarn tsc -d --emitDeclarationOnly --outDir types",
     "format": "eslint --ext tsx --ext ts src/components --fix",
     "lint": "eslint --ext tsx --ext ts src/components && tsc --noEmit",
-    "prepublishOnly": "cp -r ./lib/* . && rm -rf ./lib"
+    "prepublishOnly": "cp -r ./lib/* . "
   },
   "lint-staged": {
     "*.{js,ts,tsx}": "eslint --fix"
