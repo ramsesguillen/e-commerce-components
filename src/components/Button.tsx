@@ -17,6 +17,7 @@ export interface ButtonProps
     size?: 'sm' | 'lg';
     icon?: string;
     loading?: boolean;
+    label?: string;
 }
 
 export type CommonButtonProps = 'href' | 'size' | 'variant' | 'disabled';
@@ -26,6 +27,10 @@ const propTypes = {
      * @default 'btn'
      */
     bsPrefix: PropTypes.string,
+    /**
+     * @default 'label'
+     */
+    label: PropTypes.string,
 
     /**
      * One or more button variant combinations
@@ -93,6 +98,7 @@ export const Button: BsPrefixRefForwardingComponent<'button', ButtonProps> =
                 variant,
                 size,
                 loading,
+                label,
                 icon,
                 children,
                 active,
@@ -113,6 +119,7 @@ export const Button: BsPrefixRefForwardingComponent<'button', ButtonProps> =
                 props.disabled = true;
                 icon = 'fal fa-asterisk fa-spin';
             }
+            
 
             return (
                 <Component
@@ -129,7 +136,7 @@ export const Button: BsPrefixRefForwardingComponent<'button', ButtonProps> =
                         loading && 'disabled'
                     )}
                 >
-                    {icon && <i className={icon}></i>} {children}
+                    {icon && <i className={icon}></i>} { label ? label : children }
                 </Component>
             );
         }
