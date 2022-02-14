@@ -145,8 +145,5 @@
     "@semantic-release/git",
     "@semantic-release/github",
     "@semantic-release/npm"
-  ],
-  "publishConfig": {
-    "pkgRoot": "lib"
-  }
+  ]
 }
