@@ -21,7 +21,8 @@ export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
   children: 'Button',
-  variant: 'primary'
+  variant: 'primary',
+  icon: 'fa-light fa-bag-shopping'
 };
 
 export const Secondary = Template.bind({});
