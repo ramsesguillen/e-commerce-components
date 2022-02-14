@@ -122,7 +122,8 @@ export const Button: BsPrefixRefForwardingComponent<'button', ButtonProps> =
                         active && 'active',
                         variant && `${prefix}-${variant}`,
                         size && `${prefix}-${size}`,
-                        props.href && props.disabled && 'disabled'
+                        props.href && props.disabled && 'disabled',
+                        loading && 'disabled'
                     )}
                 >
                     {icon && <i className={icon}></i>} {children}
